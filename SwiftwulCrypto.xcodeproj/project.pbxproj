@@ -9,16 +9,20 @@
 /* Begin PBXBuildFile section */
 		AE7DFDB52D67714100F74BB2 /* SwiftwulCryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7DFDB42D67714100F74BB2 /* SwiftwulCryptoApp.swift */; };
 		AE7DFDB72D67714100F74BB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7DFDB62D67714100F74BB2 /* ContentView.swift */; };
-		AE7DFDB92D67714E00F74BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7DFDB82D67714E00F74BB2 /* Assets.xcassets */; };
 		AE7DFDBC2D67714E00F74BB2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7DFDBB2D67714E00F74BB2 /* Preview Assets.xcassets */; };
+		AE7DFDC32D6771D700F74BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE7DFDC22D6771D700F74BB2 /* Assets.xcassets */; };
+		AE7DFDC62D6772AE00F74BB2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7DFDC52D6772AE00F74BB2 /* ColorExtension.swift */; };
+		AE7DFDCD2D677BEA00F74BB2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7DFDCC2D677BEA00F74BB2 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AE7DFDB12D67714100F74BB2 /* SwiftwulCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftwulCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE7DFDB12D67714100F74BB2 /* Crypto Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7DFDB42D67714100F74BB2 /* SwiftwulCryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftwulCryptoApp.swift; sourceTree = "<group>"; };
 		AE7DFDB62D67714100F74BB2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		AE7DFDB82D67714E00F74BB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE7DFDBB2D67714E00F74BB2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AE7DFDC22D6771D700F74BB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE7DFDC52D6772AE00F74BB2 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		AE7DFDCC2D677BEA00F74BB2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +47,7 @@
 		AE7DFDB22D67714100F74BB2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE7DFDB12D67714100F74BB2 /* SwiftwulCrypto.app */,
+				AE7DFDB12D67714100F74BB2 /* Crypto Tracker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,8 +56,10 @@
 			isa = PBXGroup;
 			children = (
 				AE7DFDB42D67714100F74BB2 /* SwiftwulCryptoApp.swift */,
+				AE7DFDC72D677B8400F74BB2 /* Core */,
+				AE7DFDC42D67729100F74BB2 /* Extensions */,
+				AE7DFDC22D6771D700F74BB2 /* Assets.xcassets */,
 				AE7DFDB62D67714100F74BB2 /* ContentView.swift */,
-				AE7DFDB82D67714E00F74BB2 /* Assets.xcassets */,
 				AE7DFDBA2D67714E00F74BB2 /* Preview Content */,
 			);
 			path = SwiftwulCrypto;
@@ -65,6 +71,46 @@
 				AE7DFDBB2D67714E00F74BB2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AE7DFDC42D67729100F74BB2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE7DFDC52D6772AE00F74BB2 /* ColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE7DFDC72D677B8400F74BB2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AE7DFDC92D677B9F00F74BB2 /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AE7DFDC92D677B9F00F74BB2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AE7DFDCA2D677BAA00F74BB2 /* ViewModel */,
+				AE7DFDCB2D677BB600F74BB2 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AE7DFDCA2D677BAA00F74BB2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AE7DFDCB2D677BB600F74BB2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AE7DFDCC2D677BEA00F74BB2 /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,7 +130,7 @@
 			);
 			name = SwiftwulCrypto;
 			productName = SwiftwulCrypto;
-			productReference = AE7DFDB12D67714100F74BB2 /* SwiftwulCrypto.app */;
+			productReference = AE7DFDB12D67714100F74BB2 /* Crypto Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -125,8 +171,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE7DFDC32D6771D700F74BB2 /* Assets.xcassets in Resources */,
 				AE7DFDBC2D67714E00F74BB2 /* Preview Assets.xcassets in Resources */,
-				AE7DFDB92D67714E00F74BB2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +183,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE7DFDC62D6772AE00F74BB2 /* ColorExtension.swift in Sources */,
+				AE7DFDCD2D677BEA00F74BB2 /* HomeView.swift in Sources */,
 				AE7DFDB72D67714100F74BB2 /* ContentView.swift in Sources */,
 				AE7DFDB52D67714100F74BB2 /* SwiftwulCryptoApp.swift in Sources */,
 			);
@@ -274,6 +322,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -283,7 +332,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.myorganization.SwiftwulCrypto;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Crypto Tracker";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -303,6 +352,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -312,7 +362,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.myorganization.SwiftwulCrypto;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Crypto Tracker";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
