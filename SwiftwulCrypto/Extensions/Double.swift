@@ -25,5 +25,13 @@ extension Double {
         let number = NSNumber(value: self)
         return currencyFormatter.string(from: number) ?? "$0.00"
     }
+    // Convets a double into string representation
+    func asNumberString() -> String {
+        return String(format: "%.2f", self)
+    }
+    // Convets a double into string representation with percent symbol
+    func asPercentString() -> String {
+        return asNumberString() + "%"
+    }
     
 }
