@@ -20,16 +20,24 @@ struct HomeView: View {
         
         // content layer
             VStack {
-
                 headerSettings
+
+                colummTitles
                 
-                List {
-                    ForEach(vm.allCoins) { coin in
-                        CoinRowView(coin: coin, showHoldingColumn: false)
-                    }
+                .font(.caption)
+                .foregroundColor(Color.theme.secondaryText)
+                .padding()
+                
+                if !showPortfolio {
+                    allCoinList
+                    .transition(.move(edge: .leading))
                 }
-                .listStyle(.plain)
-        Spacer(minLength: 0)
+                if showPortfolio {
+                    portfoloCoinList
+                        .transition(.move(edge: .trailing))
+                }
+
+                Spacer(minLength: 0)
             }
         }
     }
@@ -68,4 +76,38 @@ extension HomeView {
         }
         .padding(.horizontal)
     }
-}
+    
+    private var allCoinList: some View {
+        List {
+            ForEach(vm.allCoins) { coin in
+                CoinRowView(coin: coin, showHoldingColumn: false)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                }
+            }
+            .listStyle(.plain)
+        }
+    
+    private var portfoloCoinList: some View {
+            List {
+                ForEach(vm.portfolioCoins) { coin in
+                    CoinRowView(coin: coin, showHoldingColumn: false)
+                        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    }
+                }
+                .listStyle(.plain)
+        }
+    
+    private var colummTitles: some View {
+        HStack {
+            Text("Coin")
+            Spacer()
+            if showPortfolio {
+                Text("Holdings")
+            }
+            Text("price")
+                .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
+        }
+    }
+    
+    }
+
