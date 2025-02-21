@@ -24,7 +24,9 @@ struct HomeView: View {
                 headerSettings
                 
                 List {
-                    CoinRowView(coin: DeveloperPreview.instance.coin, showHoldingColumn: false)
+                    ForEach(vm.allCoins) { coin in
+                        CoinRowView(coin: coin, showHoldingColumn: false)
+                    }
                 }
                 .listStyle(.plain)
         Spacer(minLength: 0)
@@ -39,7 +41,7 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
             .navigationBarHidden(true)
         }
-        .environmentObject(HomeViewModel())
+        .environmentObject(dev.homeVM)
     }
 }
 
