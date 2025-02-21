@@ -15,7 +15,10 @@
 		AE7DFDCD2D677BEA00F74BB2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7DFDCC2D677BEA00F74BB2 /* HomeView.swift */; };
 		AE7DFDD22D677EEF00F74BB2 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7DFDD12D677EEF00F74BB2 /* CircleButtonView.swift */; };
 		AE7DFDD42D67855300F74BB2 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7DFDD32D67855300F74BB2 /* CircleButtonAnimationView.swift */; };
+		AE90CF512D6889C70032ABE3 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE90CF502D6889C70032ABE3 /* Double.swift */; };
 		AEC90CE42D686DB1000F5109 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC90CE32D686DB1000F5109 /* CoinModel.swift */; };
+		AEC90CE62D687083000F5109 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC90CE52D687083000F5109 /* CoinRowView.swift */; };
+		AEC90CE82D6870DF000F5109 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC90CE72D6870DF000F5109 /* PreviewProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +31,10 @@
 		AE7DFDCC2D677BEA00F74BB2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AE7DFDD12D677EEF00F74BB2 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		AE7DFDD32D67855300F74BB2 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
+		AE90CF502D6889C70032ABE3 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		AEC90CE32D686DB1000F5109 /* CoinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		AEC90CE52D687083000F5109 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
+		AEC90CE72D6870DF000F5109 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				AE7DFDC52D6772AE00F74BB2 /* ColorExtension.swift */,
+				AEC90CE72D6870DF000F5109 /* PreviewProvider.swift */,
+				AE90CF502D6889C70032ABE3 /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -117,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				AE7DFDCC2D677BEA00F74BB2 /* HomeView.swift */,
+				AEC90CE52D687083000F5109 /* CoinRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +165,7 @@
 				AE7DFDAD2D67714100F74BB2 /* Sources */,
 				AE7DFDAE2D67714100F74BB2 /* Frameworks */,
 				AE7DFDAF2D67714100F74BB2 /* Resources */,
+				AEC90CEB2D687EC7000F5109 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -211,17 +221,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AEC90CEB2D687EC7000F5109 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AE7DFDAD2D67714100F74BB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC90CE62D687083000F5109 /* CoinRowView.swift in Sources */,
 				AE7DFDC62D6772AE00F74BB2 /* ColorExtension.swift in Sources */,
 				AE7DFDCD2D677BEA00F74BB2 /* HomeView.swift in Sources */,
 				AE7DFDB72D67714100F74BB2 /* ContentView.swift in Sources */,
 				AE7DFDD22D677EEF00F74BB2 /* CircleButtonView.swift in Sources */,
 				AE7DFDB52D67714100F74BB2 /* SwiftwulCryptoApp.swift in Sources */,
 				AE7DFDD42D67855300F74BB2 /* CircleButtonAnimationView.swift in Sources */,
+				AEC90CE82D6870DF000F5109 /* PreviewProvider.swift in Sources */,
+				AE90CF512D6889C70032ABE3 /* Double.swift in Sources */,
 				AEC90CE42D686DB1000F5109 /* CoinModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
