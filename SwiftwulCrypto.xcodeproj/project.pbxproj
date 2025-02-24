@@ -25,6 +25,7 @@
 		AE90CF612D6C70CE0032ABE3 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE90CF602D6C70CE0032ABE3 /* LocalFileManager.swift */; };
 		AE90CF632D6C7F0D0032ABE3 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE90CF622D6C7F0D0032ABE3 /* SearchBarView.swift */; };
 		AE90CF652D6C88840032ABE3 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE90CF642D6C88840032ABE3 /* UIApplication.swift */; };
+		AE90CF672D6C9A760032ABE3 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE90CF662D6C9A760032ABE3 /* StatisticModel.swift */; };
 		AEC90CE42D686DB1000F5109 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC90CE32D686DB1000F5109 /* CoinModel.swift */; };
 		AEC90CE62D687083000F5109 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC90CE52D687083000F5109 /* CoinRowView.swift */; };
 		AEC90CE82D6870DF000F5109 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC90CE72D6870DF000F5109 /* PreviewProvider.swift */; };
@@ -50,6 +51,7 @@
 		AE90CF602D6C70CE0032ABE3 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		AE90CF622D6C7F0D0032ABE3 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		AE90CF642D6C88840032ABE3 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		AE90CF662D6C9A760032ABE3 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
 		AEC90CE32D686DB1000F5109 /* CoinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		AEC90CE52D687083000F5109 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		AEC90CE72D6870DF000F5109 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				AEC90CE32D686DB1000F5109 /* CoinModel.swift */,
+				AE90CF662D6C9A760032ABE3 /* StatisticModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE90CF672D6C9A760032ABE3 /* StatisticModel.swift in Sources */,
 				AE90CF562D68A94C0032ABE3 /* CoinDataService.swift in Sources */,
 				AEC90CE62D687083000F5109 /* CoinRowView.swift in Sources */,
 				AE90CF532D689DCC0032ABE3 /* HomeViewModel.swift in Sources */,
