@@ -18,11 +18,13 @@ struct SearchBarView: View {
             
             TextField("search by name or symbol", text: $searchText)
                 .foregroundColor(Color.theme.accent)
+                .disableAutocorrection(true)
                 .overlay(
                 Image(systemName: "xmark.circle.fill")
                     .foregroundColor(Color.theme.accent)
                     .opacity(searchText.isEmpty ? 0 : 1)
                     .onTapGesture {
+                        UIApplication.shared.endEditing()
                         searchText = ""
                     }
                 

@@ -22,6 +22,8 @@ struct HomeView: View {
             VStack {
                 headerSettings
 
+                SearchBarView(searchText: $vm.searchText)
+                
                 colummTitles
                 
                 .font(.caption)
