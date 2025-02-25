@@ -10,6 +10,8 @@ import SwiftUI
 struct PorfolioView: View {
     
     @EnvironmentObject private var vm: HomeViewModel
+    @State private var selectedCoin: CoinModel? = nil
+    @State private var quanityText = ""
     
     var body: some View {
         NavigationView {
@@ -17,10 +19,28 @@ struct PorfolioView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     SearchBarView(searchText: $vm.searchText)
                     
-                    ScrollView(.horizontal, showsIndicators: true) {
-                        LazyHStack(spacing: 10) {
-                            ForEach(vm.allCoins) { coins in
-                                CoinLogoView(coin: coins)
+                    coinLogoList
+                    
+                    if selectedCoin != nil {
+                        VStack(spacing: 20) {
+                            HStack {
+                                Text("current price of \(selectedCoin?.symbol.uppercased() ?? ""):")
+                                Spacer()
+                                Text(selectedCoin?.currentPrice.asCurrencyWith6Decimals() ?? "")
+                            }
+                            Divider()
+                            HStack {
+                                Text("Amount in portfolio")
+                                Spacer()
+                                TextField("Ex: 1.4", text: $quanityText)
+                                    .multilineTextAlignment(.trailing)
+                                    .keyboardType(.decimalPad)
+                            }
+                            Divider()
+                            HStack {
+                                Text("Current value:")
+                                Spacer()
+                                Text("")
                             }
                         }
                     }
@@ -43,4 +63,28 @@ struct PorfolioView_Previews: PreviewProvider {
     }
 }
 
+extension PorfolioView {
+    private var coinLogoList: some View {
+        ScrollView(.horizontal, showsIndicators: true) {
+            LazyHStack(spacing: 10) {
+                ForEach(vm.allCoins) { coins in
+                    CoinLogoView(coin: coins)
+                        .frame(width:75)
+                        .padding(4)
+                        .onTapGesture {
+                            withAnimation(.easeIn) {
+                                selectedCoin = coins
+                            }
+                        }
+                        .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(selectedCoin?.id == coins.id ? Color.theme.green : Color.clear ,lineWidth: 1)
+                        )
+                }
+            }
+            .padding(.vertical, 4)
+            .padding(.leading)
+        }
 
+    }
+}
