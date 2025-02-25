@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 
+// geting all logic for market data
+
 class MarketDataService {
     
     @Published var marketData: MarketDataModel? = nil

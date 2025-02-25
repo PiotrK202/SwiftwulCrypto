@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 
+// all logic for getting coin data
+
 class CoinDataService {
     
     @Published var allCoins: [CoinModel] = []

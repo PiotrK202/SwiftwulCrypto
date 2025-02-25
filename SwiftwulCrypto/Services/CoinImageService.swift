@@ -10,6 +10,8 @@ import UIKit
 import SwiftUI
 import Combine
 
+// geting all logic for image
+
 class CoinImageService {
     
     @Published var image: UIImage? = nil
