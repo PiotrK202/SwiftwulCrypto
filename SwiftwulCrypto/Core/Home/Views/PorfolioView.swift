@@ -32,10 +32,13 @@ struct PorfolioView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     XmarkButton()
                 }
-            }
-            .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     traliningToolBar
+                }
+            }
+            .onChange(of: vm.searchText) { newValue in
+                if newValue == "" {
+                    removeSelectedCoin()
                 }
             }
         }
