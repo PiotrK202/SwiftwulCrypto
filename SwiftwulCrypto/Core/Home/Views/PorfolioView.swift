@@ -12,6 +12,7 @@ struct PorfolioView: View {
     @EnvironmentObject private var vm: HomeViewModel
     @State private var selectedCoin: CoinModel? = nil
     @State private var quanityText = ""
+    @State private var showCheckmark = false
     
     var body: some View {
         NavigationView {
@@ -22,27 +23,7 @@ struct PorfolioView: View {
                     coinLogoList
                     
                     if selectedCoin != nil {
-                        VStack(spacing: 20) {
-                            HStack {
-                                Text("current price of \(selectedCoin?.symbol.uppercased() ?? ""):")
-                                Spacer()
-                                Text(selectedCoin?.currentPrice.asCurrencyWith6Decimals() ?? "")
-                            }
-                            Divider()
-                            HStack {
-                                Text("Amount in portfolio")
-                                Spacer()
-                                TextField("Ex: 1.4", text: $quanityText)
-                                    .multilineTextAlignment(.trailing)
-                                    .keyboardType(.decimalPad)
-                            }
-                            Divider()
-                            HStack {
-                                Text("Current value:")
-                                Spacer()
-                                Text("")
-                            }
-                        }
+                        coinInput
                     }
                 }
             }
@@ -50,6 +31,11 @@ struct PorfolioView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     XmarkButton()
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    traliningToolBar
                 }
             }
         }
@@ -87,4 +73,74 @@ extension PorfolioView {
         }
 
     }
+    
+    private var coinInput: some View {
+        VStack(spacing: 20) {
+            HStack {
+                Text("current price of \(selectedCoin?.symbol.uppercased() ?? ""):")
+                Spacer()
+                Text(selectedCoin?.currentPrice.asCurrencyWith6Decimals() ?? "")
+            }
+            Divider()
+            HStack {
+                Text("Amount in portfolio")
+                Spacer()
+                TextField("Ex: 1.4", text: $quanityText)
+                    .multilineTextAlignment(.trailing)
+                    .keyboardType(.decimalPad)
+            }
+            Divider()
+            HStack {
+                Text("Current value:")
+                Spacer()
+                Text(getCurrentValue().asCurrencyWith2Decimals())
+            }
+        }
+    }
+    
+    private var traliningToolBar: some View {
+        HStack {
+            Image(systemName: "checkmark")
+                .opacity(showCheckmark ? 1 : 0)
+            Button {
+                saveButtonPressed()
+            } label: {
+                Text("SAVE")
+            }
+            .opacity( selectedCoin != nil && selectedCoin?.currentHoldings != Double(quanityText) ? 1 : 0 )
+        }
+        .font(.headline)
+    }
+    
+    private func saveButtonPressed() {
+        guard let coin = selectedCoin else { return }
+        
+        
+        withAnimation(.easeIn) {
+            showCheckmark = true
+            removeSelectedCoin()
+        }
+        
+        UIApplication.shared.endEditing()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            withAnimation(.easeOut) {
+                showCheckmark = false
+            }
+        }
+    }
+    
+    
+    private func removeSelectedCoin() {
+        selectedCoin = nil
+        vm.searchText = ""
+    }
+    
+    private func getCurrentValue() -> Double {
+        if let quanity = Double(quanityText) {
+            return quanity * (selectedCoin?.currentPrice ?? 0)
+        }
+        return 0
+    }
+    
 }
