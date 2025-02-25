@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct PorfolioView: View {
+    
+    @EnvironmentObject private var vm: HomeViewModel
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("hi")
+                    SearchBarView(searchText: $vm.searchText)
+                    
+                    ScrollView(.horizontal, showsIndicators: true) {
+                        LazyHStack(spacing: 10) {
+                            ForEach(vm.allCoins) { coins in
+                                CoinLogoView(coin: coins)
+                            }
+                        }
+                    }
                 }
             }
             .navigationTitle("Edit Portfolio")
@@ -28,6 +39,7 @@ struct PorfolioView: View {
 struct PorfolioView_Previews: PreviewProvider {
     static var previews: some View {
         PorfolioView()
+            .environmentObject(dev.homeVM)
     }
 }
 
