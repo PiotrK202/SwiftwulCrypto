@@ -83,7 +83,7 @@ class HomeViewModel: ObservableObject {
     private func mapGlobalMarketData(marketDataModel: MarketDataModel?, portfolioCoins: [CoinModel]) -> [StatisticModel] {
         var stats: [StatisticModel] = []
         
-        guard let data = marketDataModel else {
+        guard marketDataModel != nil else {
             return stats
         }
         
