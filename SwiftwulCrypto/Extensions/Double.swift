@@ -9,21 +9,11 @@ import Foundation
 
 extension Double {
     
-    private var currencyFormatter2: NumberFormatter {
-        let formatter = NumberFormatter()
-        formatter.usesGroupingSeparator = true
-        formatter.numberStyle = .currency
-        formatter.locale = .current
-        formatter.currencyCode = "usd"
-        formatter.currencySymbol = "$"
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 6
-        return formatter
-    }
+
     // Convets a double into a currency as a string with 2 decimal places
     func asCurrencyWith2Decimals() -> String {
         let number = NSNumber(value: self)
-        return currencyFormatter2.string(from: number) ?? "$0.00"
+        return currencyFormatter.string(from: number) ?? "$0.00"
     }
     
     // Convets a double into a currency with 2-6 decimal places
@@ -64,7 +54,7 @@ extension Double {
     /// Convert 12345678901234 to 12.34Tr
     /// ```
     func formattedWithAbbreviations() -> String {
-        let num = abs(Double(self))
+        let num = abs(self)
         let sign = (self < 0) ? "-" : ""
 
         switch num {

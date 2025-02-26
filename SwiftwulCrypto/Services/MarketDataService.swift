@@ -23,9 +23,12 @@ class MarketDataService {
         
         guard let url = URL(string: "https://api.coingecko.com/api/v3/global")
         else { return }
+         
+         let jsonDecoder = JSONDecoder()
+         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         
         marketDataSubsciption = NetworkingManager.download(url: url)
-            .decode(type: GlobalData.self, decoder: JSONDecoder())
+            .decode(type: GlobalData.self, decoder: jsonDecoder)
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] returnedGlobalData in
                 self?.marketData = returnedGlobalData.data
                 self?.marketDataSubsciption?.cancel()
